@@ -1,0 +1,48 @@
+<nav class="navbar navbar-inverse navbar-fixed-top navbar-blue" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            <a class="navbar-brand" ui-sref="effort">CS5 <span class="hide-xs">Canvassing</span></a> </div>
+        <div class="topbar-tools">
+            <!-- start: TOP NAVIGATION MENU -->
+            <ul class="nav navbar-right">
+                <li class="right-menu-toggle">
+                </li>
+                <li class="dropdown current-user">
+                    <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" data-close-others="true" href=""> <img style="height:30px;width:30px" src="../assets/images/download.png" class="img-circle" alt=""> <i class="fa  fa-angle-down"></i> </a>
+                    <ul class="dropdown-menu dropdown-dark">
+                        <!-- <li> <a href=""> My Profile </a> </li> -->
+                        <li> <a href="" ng-click="logout()"> Log out </a> </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- end: TOP NAVIGATION MENU -->
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li ui-sref-active="active"> <a href="javascript:void(0)" data-toggle="dropdown">Efforts</a>
+                    <ul class="dropdown-menu">
+                        <li><a ui-sref="effort" class="{{(pageTitle == 'Effort' || pageTitle == 'Effort-Detail') ? 'active' : ''}}">Calendar</a></li>
+                        <li><a ui-sref="effortList" class="{{(pageTitle == 'Effort' || pageTitle == 'Effort-Detail') ? 'active' : ''}}">List</a></li>
+                    </ul>
+                </li>
+                <!-- <li ui-sref-active="active" class="{{(pageTitle == 'Effort' || pageTitle == 'Effort-Detail') ? 'active' : ''}}"> <a ui-sref="effort">Effort</a> </li> -->
+                <li ui-sref-active="active" class="{{(pageTitle == 'Add Survey' || pageTitle == 'Create Survey') ? 'active' : ''}}"> <a ui-sref="survey">Surveys</a> </li>
+                <li ui-sref-active="active" class="{{(pageTitle == 'Worker') ? 'active' : ''}}"> <a ui-sref="worker">Workers</a> </li>
+                <!--                 <li ui-sref-active="active" class="{{(pageTitle == 'Reports') ? 'active' : ''}}"> <a ui-sref="report">Reports</a> </li> -->
+                <li ui-sref-active="active"> <a href="javascript:void(0)" data-toggle="dropdown">Reports</a>
+                    <ul class="dropdown-menu">
+                        <li><a ui-sref="completed">Survey Reports</a></li>
+                        <!-- <li><a ui-sref="quest-per">Survey-(Question/Person)</a></li> -->
+                        <li><a ui-sref="surworker">By Person</a></li>
+                        <li><a ui-sref="answersreport">By Question</a></li>
+                    </ul>
+                </li>
+                <li ui-sref-active="active" class="{{(pageTitle == 'Worker') ? 'active' : ''}}"> <a ui-sref="feedback">Feedback</a> </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>

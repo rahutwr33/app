@@ -1,0 +1,63 @@
+<section class="main-content" ng-init="getFeedback(1,5)">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 col-xs-12 gutter">
+                <div class="region">
+                    <div class="col-md-12 clearfix">
+                        <h2>Worker Feedback</h2>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+        <div class="spacer25"></div>
+        <div class="spacer25"></div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-xs-12">
+                <div class="region">
+                    <div class=" search_sec">
+                        <div class="row">
+                            <div class=" col-lg-7 col-sm-7 col-xs-12">
+                                <form class="form-horizontal" id="search_form">
+                                    <div class="form-group">
+                                        <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12">
+                                            <input type="text" class="form-control" id="search" ng-model="searchTextField" ng-change="searching(searchTextField)"  placeholder="Search" autofocus="">
+                                        </div>
+                                        <label ng-if="feedbackList.length > 0" for="inputEmail" class="control-label col-lg-4 col-md-4 col-sm-6 col-xs-12">Showing {{((paramUrl.page * paramUrl.count) - paramUrl.count) + 1}} to {{(paramUrl.count != feedbackList.length) ? (paramUrl.page * paramUrl.count) - (paramUrl.count - feedbackList.length) :  paramUrl.page * paramUrl.count }} of {{totalLength}} entries</label>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" table-responsive">
+                        <table class=" table" id="surveytbl" ng-table="tableParams" >
+                            <tbody>
+                                <tr  ng-repeat="list in feedbackList">
+                                    <td data-title="'Name'" width="20%" filter="{ firstname: 'text'}" ng-bind="list.surveyed_person.first_name+' '+list.surveyed_person.last_name" sortable="'surveyed_person.first_name'"></td>
+                                    <!-- <td data-title="'Last Name'" width="20%" filter="{lastname:'text'}" ng-bind="list.surveyed_person.last_name" sortable="'surveyed_person.last_name'"></td> -->
+                                    <td data-title="'Email'" width="25%" filter="{email :'text'}" ng-bind="list.surveyed_person.email" sortable="'surveyed_person.email'"></td>
+                                    <td data-title="'Survey name'" width="20%" filter="{tag:'text'}" ng-bind="list.survey.survey_name" sortable="'survey.survey_name'"></td>
+                                    <td data-title="'Effort Name'" width="20%" filter="{tag:'text'}" ng-bind="list.effort.effort_name" sortable="'effort.effort_name'"></td>
+                                    <td data-title="'Comment'" width="15%">
+                                        <textarea  name="" id="" cols="10" rows="2" class="form-control" ng-bind="list.comment" readonly></textarea>
+                                    </td>
+                                </tr>
+                                <tr ng-if="feedbackList == 0"><td colspan="6" >No record found</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--<div class="row">
+                        <div class=" col-sm-12">
+                            <p class=" bottom-btn">
+                                <a href="#" class=" pull-right navgn marL30">Next</a>
+                                <button class="pageno pull-right">12</button>
+                                <a href="#" class=" pull-right navgn marR30">Previous</a>
+                            </p>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="spacer75"></div>
+    </div>
+</section>

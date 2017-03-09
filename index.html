@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app="aenApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title ng-bind="title"></title>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Css Starts-->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href='../assets/css/font-awesome.css' rel='stylesheet' type='text/css'>
+    <link href='../assets/css/fullcalendar.css' rel='stylesheet' type='text/css'>
+    <link href="../assets/css/AEN.css" rel="stylesheet">
+    <link href="../assets/css/logger.css" rel="stylesheet">
+
+    <script type="text/javascript" src="../assets/js/jQuery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../assets/js/angularjs.min1.4.8.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="../bower_components/oclazyload/dist/ocLazyLoad.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-resource/angular-resource.min.js"></script>
+    <script type="text/javascript" src="../assets/js/logger.min.js"></script>
+    <script type="text/javascript" src="../assets/js/ui-bootstrap-tpls-1.1.2.min.js"></script>
+    <script type="text/javascript" src="../bower_components/moment/min/moment.min.js"></script>
+    <script type="text/javascript" src="../assets/js/bootbox.min.js"></script>
+    <script type="text/javascript" src="../assets/js/Highchart/highcharts.js"></script>
+    <!-- <script type="text/javascript" src="../assets/js/Highchart/drilldown.js"></script> -->
+    <script type="text/javascript" src="../assets/js/Highchart/highcharts-ng.js"></script>
+    <script type="text/javascript" src="../assets/js/jstz.min.js"></script>
+    <script type="text/javascript" src="../assets/js/moment-timezone-with-data.min.js"></script>
+
+
+
+    <!-- <script type="text/javascript" src="../bower_components/highcharts/js/highcharts.js"></script> -->
+    <!-- <script type="text/javascript" src="../bower_components/highcharts/js/modules/exporting.js"></script> -->
+
+
+    <!-- Grunt bilt files -->
+    <!-- <script src="../gruntFile/user/distLib.js" type="text/javascript"></script> -->
+    <!-- <script src="../gruntFile/user/built.js" type="text/javascript"></script> -->
+    <!-- Grunt bilt files -->
+    <script type="text/javascript" src="adminApp.js"></script>
+    <script type="text/javascript" src="depModules.js"></script>
+    <script type="text/javascript" src="modules/common/controllers/baseController.js"></script>
+    <script type="text/javascript" src="modules/reports/controllers/chartController.js"></script>
+    <script type="text/javascript" src="modules/common/services/baseService.js"></script>
+    <script type="text/javascript" src="modules/common/filters/commonFilters.js"></script>
+    <script type="text/javascript" src="constants.js"></script>
+    <script type="text/javascript" src="services/userServices.js"></script>
+    <script type="text/javascript" src="services/loggerServices.js"></script>
+    <script type="text/javascript" src="directive/onlyDigits.js"></script>
+    <script type="text/javascript" src="directive/passwordMatch.js"></script>
+    <script type="text/javascript" src="services/encodeDecode.js"></script>
+    <script type="text/javascript" src="services/ngTableParamsService.js"></script>
+
+</head>
+<!-- page-top -->
+
+<body ng-controller="BaseController" >
+    <div ui-view="header"></div>
+    <div ui-view="content"></div>
+    <div ui-view="footer"></div>
+        <script async type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDCy_slvkSukNvzDb_4g16Oew5NTY6ejOk&libraries=drawing,geometry,places"></script>
+</body>
+
+</html>
